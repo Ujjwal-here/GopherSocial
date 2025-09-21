@@ -1,8 +1,9 @@
 package main
 
 import (
-	"GopherSocial/internal/env"
 	"log"
+
+	"github.com/Ujjwal-here/GopherSocial/internal/env"
 )
 
 func main() {
