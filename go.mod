@@ -1,4 +1,4 @@
-module GopherSocial
+module github.com/Ujjwal-here/GopherSocial
 
 go 1.25
 
