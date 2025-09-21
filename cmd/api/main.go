@@ -1,10 +1,13 @@
 package main
 
-import "log"
+import (
+	"GopherSocial/internal/env"
+	"log"
+)
 
 func main() {
 	configg := config{
-		addr: ":8080",
+		addr: env.GetString("ADDR", ":8080"),
 	}
 	app := &application{
 		config: configg,
