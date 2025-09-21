@@ -138,6 +138,7 @@ main
 
 # Air live reload
 tmp/
+.air.toml
 
 # Go specific
 vendor/
