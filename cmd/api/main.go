@@ -25,6 +25,8 @@ func main() {
 		log.Panic(err)
 	}
 
+	defer db.Close()
+
 	store := store.NewPostgresStorage(db)
 
 	app := &application{
