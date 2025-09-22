@@ -27,6 +27,8 @@ func main() {
 
 	defer db.Close()
 
+	log.Println("Database connection pool established")
+
 	store := store.NewPostgresStorage(db)
 
 	app := &application{
