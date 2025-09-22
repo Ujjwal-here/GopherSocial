@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 
+	"github.com/Ujjwal-here/GopherSocial/internal/db"
 	"github.com/Ujjwal-here/GopherSocial/internal/env"
 	"github.com/Ujjwal-here/GopherSocial/internal/store"
 )
@@ -18,7 +19,13 @@ func main() {
 		},
 	}
 
-	store := store.NewPostgresStorage(nil)
+	db, err := db.New(configg.db.addr, configg.db.maxOpenConns, configg.db.maxIdleConns, configg.db.maxIdleTime)
+
+	if err != nil {
+		log.Panic(err)
+	}
+
+	store := store.NewPostgresStorage(db)
 
 	app := &application{
 		config: configg,
